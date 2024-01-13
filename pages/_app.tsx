@@ -61,13 +61,9 @@ function MyApp({ Component, pageProps }: AppProps) {
         </ChakraProvider>
       </ThirdwebProvider>
     </div>
-    )
+    );
   }
 
-  function Component() {
-    const { contract, isLoading } = useContract("0x80B275ca1434EB942da1cAfC194663aD56f721f8");
-  
-  
-}
+ 
 
 export default MyApp;
