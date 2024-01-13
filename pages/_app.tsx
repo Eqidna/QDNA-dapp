@@ -1,6 +1,7 @@
+
+import { ThirdwebProvider, useContract } from "@thirdweb-dev/react";
 import type { AppProps } from "next/app";
 import {
-  ThirdwebProvider,
   walletConnect,
   ConnectWallet,
   coinbaseWallet,
@@ -10,14 +11,13 @@ import {
   paperWallet,
   safeWallet,
   smartWallet,
-  useContract,
 } from "@thirdweb-dev/react";
 import {
   Polygon,
-  EthereumClassic,
   Ethereum,
   Binance,
   Optimism,
+  EthereumClassic,
   Dogechain,
   Arbitrum,
 } from "@thirdweb-dev/chains";
@@ -28,11 +28,6 @@ import { Container, Flex, ChakraProvider } from "@chakra-ui/react";
 import Navbar from "../components/Navbar";
 
 
-// This is the chain your dApp will work on.
-// Change this to the chain your app is built for.
-// You can also import additional chains from `@thirdweb-dev/chains` and pass them directly.
-const activeChain = "polygon";
-
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <div
@@ -40,23 +35,24 @@ function MyApp({ Component, pageProps }: AppProps) {
         background: "linear-gradient(to left, #3A619C, #65A6F3, #1F3996 )",
       }}
     >
-      <ThirdwebProvider
-        activeChain={activeChain}
-        supportedChains={[
-          EthereumClassic,
-          Ethereum,
-          Binance,
-          Optimism,
-          Polygon,
-          Arbitrum,
-          Dogechain,
-        ]}
-        supportedWallets={[
-          metamaskWallet(),
-          walletConnect(),
-          coinbaseWallet(),
-          safeWallet(),
-        ]}
+      < ThirdwebProvider
+      activeChain="polygon"
+      clientId="eb54bc7719937d0bb2c9c0693d42423c" // You can get a client id from dashboard settings
+      supportedChains={[
+        Polygon,
+        Ethereum,
+        Binance,
+        Optimism,
+        EthereumClassic,
+        Arbitrum,
+        Dogechain,
+      ]}
+      supportedWallets={[
+        metamaskWallet(),
+        walletConnect(),
+        coinbaseWallet(),
+        safeWallet(),
+      ]}
       >
         <ChakraProvider>
           <Navbar />
@@ -67,7 +63,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     </div>
     )
   }
-  
+
   function Component() {
     const { contract, isLoading } = useContract("0x80B275ca1434EB942da1cAfC194663aD56f721f8");
   
