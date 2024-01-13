@@ -40,16 +40,17 @@ function MyApp({ Component, pageProps }: AppProps) {
         background: "linear-gradient(to left, #3A619C, #65A6F3, #1F3996 )",
       }}
     >
-      <ThirdwebProvider
-        activeChain={activeChain}
-        supportedChains={[
-          EthereumClassic,
-          Ethereum,
-          Binance,
-          Optimism,
-          Polygon,
-          Arbitrum,
-          Dogechain,
+      < ThirdwebProvider
+      activeChain="polygon"
+      clientId="eb54bc7719937d0bb2c9c0693d42423c" // You can get a client id from dashboard settings
+      supportedChains={[
+        Polygon,
+        Ethereum,
+        Binance,
+        Optimism,
+        EthereumClassic,
+        Arbitrum,
+        Dogechain,
         ]}
         supportedWallets={[
           metamaskWallet(),
