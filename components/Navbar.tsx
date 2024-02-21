@@ -3,15 +3,6 @@ import {
   ThirdwebProvider,
   ConnectWallet,
   metamaskWallet,
-  coinbaseWallet,
-  walletConnect,
-  safeWallet,
-  localWallet,
-  trustWallet,
-  zerionWallet,
-  rainbowWallet,
-  phantomWallet,
-  darkTheme,
 } from "@thirdweb-dev/react";
 
 export default function Navbar() {
