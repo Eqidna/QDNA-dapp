@@ -7,7 +7,6 @@ import {
   walletConnect,
   safeWallet,
   localWallet,
-  embeddedWallet,
   trustWallet,
   zerionWallet,
   rainbowWallet,
