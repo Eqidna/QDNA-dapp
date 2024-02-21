@@ -21,14 +21,37 @@ const Home: NextPage = () => {
     <>
       {address ? (
         <Container maxW="500px">
-          <EqidnaTokenBalance />
-          <Airdrop />
+          <Flex justifyContent="space-between" alignItems="center" flexDirection="column">
+            <Box>
+              <EqidnaTokenBalance />
+            </Box>
           
-          <Mint />
-          <Stake />
-          <ClaimReward />
-          <Unstake />
-          <LatestTransactions />
+            <Box>
+              <Airdrop />
+            </Box>
+            
+            <Box>
+              <Mint />
+            </Box>
+            
+            <Box>
+              <Stake />
+            </Box>
+
+             <Box>
+              <ClaimReward />
+            </Box>
+            
+             <Box>
+              <Unstake />
+            </Box>
+            
+             <Box>
+             <LatestTransactions />
+            </Box>
+            
+          </Flex>
+         
         </Container>
       ) : (
         <Container maxW="1200px" centerContent>
